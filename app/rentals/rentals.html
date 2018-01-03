@@ -1,0 +1,122 @@
+<div ng-controller="RentalsCtrl">
+	<header>
+		<h1>DREAM HOME</h1>
+		<p>We Help You To Find Your Dream Home...</p>
+		<div class="row">
+			<div class="large-12 columns">
+				<form ng-submit="searchRentals()">
+					<input type="text" name="city" ng-model="city" placeholder="Enter a City..." required>
+					<input type="submit" name="submit" value="FIND" class="button">
+					 <a href="#add" class="button success">Add List</a>
+				</form>
+			</div>
+		</div>
+	</header>
+
+<!-- 	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button><a class="navbar-brand" href>Finding Your Deram House</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <a data-target="#login" href>Login</a>
+                </li>
+                <li>
+                    <a data-target="#register" href>Signup</a>
+                </li>
+                <li>
+                    <a data-target="#lists" href>Shared List</a>
+                </li>
+                <li>
+                    <a id="logout" href>Logout</a>
+                </li>
+            </ul>
+        </div>
+        <!/.nav-collapse -->
+   <!--  </div>
+</div>
+<div class="welcome"></div>
+<div class="container tab default" id="login">
+    <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">
+                    <em class="stackhive-marker"></em>Login to your account
+                </h2>
+        <hr>
+        <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" id="login-email">
+        <input type="password" class="form-control" placeholder="Password" required="" id="login-password">
+        <button class="btn btn-primary" type="button" id="login-btn"  ng-submit="searchRentals()">
+            Login
+        </button>
+        <hr>
+        <div class="status alert alert-info hide"></div>
+    </form>
+</div>
+<div class="container tab hide" id="register">
+    <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">
+                    Register a new account
+                </h2>
+        <hr>
+        <input type="text" class="form-control" placeholder="Your Name" required="" autofocus="" id="name">
+        <input type="email" class="form-control" placeholder="Email address" required="" autofocus="" id="email">
+        <input type="password" class="form-control" placeholder="Password" required="" id="password">
+        <button class="btn btn-primary" type="button" id="signup-btn">
+            Sign Me Up!
+        </button>
+    </form>
+    <hr>
+    <div class="status alert alert-info hide"></div>
+</div>
+<div class="container tab hide" id="lists">
+    <div class="status alert alert-info hide"></div>
+    <br> -->
+    <!-- <h3>
+                Add Items to the Shared List
+            </h3> -->
+   <!--  <p>
+        <textarea type="text" id="listitem" placeholder="Add content that you want to add to your list"></textarea>
+        <br>
+        <a id="addItemToList" class="btn btn-success">Add it to your list</a>
+    </p>
+    <hr>
+    <a class="btn btn-info" id="sort-items">View Aligned (for OCD fellows!)</a>
+    <ul id="sharedlist" class="sharedlist" data-widget-class="sharedlist"></ul>
+</div>
+ -->
+	<div data-alert class="alert-box success" ng-show="msg">{{msg}}</div>
+
+	<div ng-show="showLatest">
+		<h3 class="page-heading">Latest  Rentals</h3>
+		<div class="row rental" ng-repeat="rental in rentals">
+			<div class="small-4 columns">
+				<img src="{{rental.image_url}}">
+			</div>
+			<div class="small-8 columns">
+				<div class="label">{{rental.city}}</div>
+				<h3><a href="/app/#details/{{rental.$id}}">{{rental.title}}</a></h3>
+				<p>{{rental.phone}}</p>
+			</div>
+		</div>
+		
+	</div>
+	<div ng-show="showResults">
+		<h3 class="page-heading">Rentals in {{city}}</h3>
+		<a ng-click="refresh()" class="button tiny back">Back to list</a>
+		<div class="row rental" ng-repeat="rental in rentals">
+			<div class="small-4 columns">
+				<img src="{{rental.image_url}}">
+			</div>
+			<div class="small-8 columns">
+				<div class="label">{{rental.city}}</div>
+				<h3><a href="/app/#details/{{rental.$id}}">{{rental.title}}</a></h3>
+				<p>{{rental.phone}}</p>
+			</div>
+		</div>
+		
+	</div>
+</div>

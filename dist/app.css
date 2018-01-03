@@ -1,0 +1,68 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+header{
+  text-align: center;
+  background:#40E0D0;
+    background-image:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTphGMgb317IjLeKZ_GrCUD4W8G5ElNDnIUof0AU2N4j5MrSJ6u9w");
+  padding:20px;
+  margin-bottom:0;
+}
+
+header h1{
+  margin-bottom:0;
+  padding-bottom:0;
+  color:purple;
+}
+
+.rental{
+  line-height:2em;
+  border-bottom:1px #ccc solid;
+  padding-top:10px;
+}
+
+.page-heading{
+  background:#4B0082;
+  color:black;
+  text-align: center;
+  padding:5px;
+  margin:0 0 10px 0;
+}
+
+.details img{
+  width:100%;
+}
+
+.actions{
+  margin-top:10px;
+  padding:5px;
+  background:#f4f4f4;
+}
